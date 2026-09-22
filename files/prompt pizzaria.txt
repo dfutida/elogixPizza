@@ -1,0 +1,29 @@
+Gerar um arquivo de roteiro 'pizzaria.md' na pasta /files que servirá como roteiro para o desenvolvimento de um sistema para pizzaria. Não gerar nenhum código ainda, somente gerar o arquivo de roteiro 'pizzaria.md'.
+Este sistema/plataforma deverá antes de tudo ser muito seguro, não ter falhas de SQL injection ou qualquer outro tipo de falha no sistema que algum hacker consiga burlar, como o sistema de autenticação por exemplo. O sistema deverá ter o backend em Laravel, javascript e ajax com banco de dados PostgreSQL.
+Desenhar a arquitetura da plataforma e o arquivo dump.sql com todos os create table que serão utilizados no projeto.
+O projeto consiste em desenvolver um SaaS, multiclientes onde cada pizzaria tem o seu sistema de pizzaria independente dentro de uma plataforma única. Por exemplo, fazemos uma melhoria para a pizzaria A na plataforma, e esta melhoria reflete para a pizzaria B, que reflete na C, que reflete na D, independente de quantas pizzarias existirem na plataforma, toda a melhoria será refletida em todos os sistemas, cada um com seu domínio e URL próprio.
+A plataforma deverá ter a versão do site, a versão mobile e a versão tablet.
+A plataforma deverá ter a versão do sistema com usuário autenticado (com perfil de usuários) e versão do site para pedidos com cardápio público e cadastro de cliente e forma de pagamento.
+Cada cliente pode ter um ou mais pedido, mas cada pedido deve ter apenas um cliente.
+Histórico de pedido por cliente - armazenar apenas os 3 últimos pedidos por cliente.
+A plataforma deverá ter integração com Whatsapp Business, onde o atendente da pizzaria poderá gerenciar o pedido do cliente e colocar na fila para a produção da pizza, por ordem de entrada. A plataforma deverá buscar o cadastro do cliente (nome completo, endereço e celular) no banco de dados PostgreSQL através do número de celular do cliente que fez o pedido por whatsapp (Através do número de celular do cliente que fez o pedido no whatsapp, a plataforma deve buscar no banco de dados e inserir os dados do cliente no pedido). Utilizar os conceitos de UX Design para que fique fácil para o atendente utilizar a plaforma que fará o cálculo do pedido, como a soma dos itens do pedido, por exemplo, 1 pizza grande, meio calabresa e meio muçarela, 1 Coca-Cola de 2 litros e 1 pizza broto de banana. Terá que calcular a taxa de entrega do motoboy junto com o pedido.
+Todas as pizzas da plataforma deverão ter um ajuste fácil de cadastro, onde se atualiza o preço de uma pizza e automaticamente atualiza o preço da pizza broto, média e grande do mesmo sabor, com base em um campo de porcentagem inserido no inicio da edição do preço.
+O menu principal da plataforma deverá conter:
+- Pedidos 
+Em andamento - com fila dos pedidos por ordem de chegada; 
+Entregues - se tudo ocorreu bem; 
+Devolução - pedidos com problemas: 
+Forma de pagamento (Pix, cartão de crédito, ticket refeição, dinheiro) - flag com a opção 'Pagamento realizado via Pix' ou 'Pagamento pendente na entrega'. 
+Entrega via Motoboy (Preço da entrega calculado através do CEP)
+- Atendimento por Whatsapp 
+Contato pelo whatsapp para o envio do cardápio - link da plataforma. 
+Origem dos pedidos, que deverão ser integrados na plataforma.
+- Integração com iFood (gerenciar os pedidos do iFood na plataforma).
+- Integração com Keeta (gerenciar os pedidos da Keeta na plataforma).
+- Integração com 99 Food (gerenciar os pedidos do 99 Food na plataforma).
+- Cadastro de cliente 
+Nome completo do cliente, celular, endereço de entrega: busca o endereço através do CEP e insere o endereço automaticamente - podendo mudar de endereço conforme o pedido
+- Cardápio de pizzas 
+(Titulo, ingredientes, tamanho, preço) - inclusive calcular o preço da pizza com mesmo sabor e de acordo com o tamanho: broto, média e grande. Este tamanho deve ser personalizável, por exemplo, a pizzaria A tem pizza tamanho broto, média e grande, mas a pizzaria B tem pizza somente tamanho média e grande, não tem broto. O item 'tamanho da pizza' deve ser fácil editar para incluir ou remover de todo o cardápio.
+- Dashboard - horários com mais pedido, pizzas mais pedidas, faturamento de pizzas entregues e concluídas, problemas de pizzas devolvidas com motivo da devolução.
+Não gerar nenhum código ainda, somente gerar o arquivo de roteiro 'pizzaria.md' na pasta /files/pizzaria.md
